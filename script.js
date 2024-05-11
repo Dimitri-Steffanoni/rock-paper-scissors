@@ -8,7 +8,7 @@ function getComputerChoice() {
   } else if (i == 1) {
     return "paper";
   } else {
-    return "scrissors";
+    return "scissors";
   }
 }
 
@@ -25,18 +25,49 @@ function getHumanChoice() {
   return human_answer;
 }
 
-function playRound() {
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
-
-    if (humanChoice==computerChoice){
-        return humanChoice + " vs " + computerChoice + " no one wins";
-    } else {
-        return "brrrrr";
-    }
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice == computerChoice) {
+    return "Draw! no one wins";
+  } else if (humanChoice == "paper" && computerChoice == "rock") {
+    humanScore++;
+    return "You won! Paper beats Rock.";
+  } else if (humanChoice == "paper" && computerChoice == "scissors") {
+    computerScore++;
+    return "You lose! Scissors beats Paper.";
+  } else if (humanChoice == "rock" && computerChoice == "scissors") {
+    humanScore++;
+    return "You won! Rock beats scissors.";
+  } else if (humanChoice == "rock" && computerChoice == "paper") {
+    computerScore++;
+    return "You lose! Paper beats Rock.";
+  } else if (humanChoice == "scissors" && computerChoice == "paper") {
+    humanScore++;
+    return "You won! Scissors beats Paper.";
+  } else if (humanChoice == "scissors" && computerChoice == "rock") {
+    computerScore++;
+    return "You lose! Rock beats Scissors.";
+  } else return "Something went wrong";
 }
 
-console.log(playRound());
+function playGame() {
+  let humanChoice = getHumanChoice();
+  let computerChoice = getComputerChoice();
+
+  console.log(playRound(humanChoice, computerChoice));
+}
 
 let humanScore = 0;
 let computerScore = 0;
+
+while (humanScore < 5 && computerScore < 5) {
+  playGame();
+  console.log(humanScore + " - " + computerScore);
+}
+
+if (humanScore == 5) {
+  console.log("Congratulations! You won 5 to " + computerScore);
+  alert("Congratulations! You won 5 to " + computerScore);
+} else {
+  console.log("Disgrace! You lost 5 to " + humanScore);
+  alert("Disgrace! You lost 5 to " + humanScore);
+}
