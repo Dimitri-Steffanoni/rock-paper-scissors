@@ -59,15 +59,3 @@ function playGame() {
 let humanScore = 0;
 let computerScore = 0;
 
-while (humanScore < 5 && computerScore < 5) {
-  playGame();
-  console.log(humanScore + " - " + computerScore);
-}
-
-if (humanScore == 5) {
-  console.log("Congratulations! You won 5 to " + computerScore);
-  alert("Congratulations! You won 5 to " + computerScore);
-} else {
-  console.log("Disgrace! You lost 5 to " + humanScore);
-  alert("Disgrace! You lost 5 to " + humanScore);
-}
