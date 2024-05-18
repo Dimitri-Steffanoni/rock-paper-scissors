@@ -17,3 +17,13 @@ html, body{
 .container > div {
     margin: 20px;
 }
+
+button{
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: darkred;
+    border: 0;
+    border-radius: 10px;
+    color: darkgray;
+    padding: 10px;
+}

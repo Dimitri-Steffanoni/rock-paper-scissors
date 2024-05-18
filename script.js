@@ -56,6 +56,15 @@ function playGame() {
   console.log(playRound(humanChoice, computerChoice));
 }
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", () => console.log(playRound("rock", getComputerChoice())));
+paper.addEventListener("click", () => console.log(playRound("paper", getComputerChoice())));
+scissors.addEventListener("click", () => console.log(playRound("scissors", getComputerChoice())));
+
+
 let humanScore = 0;
 let computerScore = 0;
 
