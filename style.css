@@ -11,8 +11,15 @@ p{
 }
 
 .header{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     height: 40%;
+    text-align: center;
+    font-weight: 650;
 }
+
 
 .footer{
     height: 40%;
